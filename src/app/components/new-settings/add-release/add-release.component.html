@@ -1,0 +1,142 @@
+<div class="row">
+    
+    <div class="col-6">
+        <div class="form-group">
+        <label for="comment">  Tipo </label>
+        <select class="custom-select section" [(ngModel)]="Release.IDRELEASETYPE" multiple>
+            <option *ngFor="let type of type" [ngValue]="type.IDRELEASETYPE">{{ type.NAMERELEASETYPE }}</option>
+          </select>
+      </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label for="comment"> Sección</label>
+            <select class="custom-select section" [(ngModel)]="Release.IDSECTION" multiple>
+                <option *ngFor="let section of section" [ngValue]="section.IDSECTION">{{ section.NAMESECTION }}</option>
+              </select>
+          </div>
+    </div>
+
+    <div class="col-12">
+        <div class="form-group">
+            <label for="comment"> Subsección</label>
+            <input class="form-control" [(ngModel)]="Release.SUBSECTION" type="text">
+            
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group">
+            <label for="comment"> Miniatura </label>
+            <input class="form-control" [(ngModel)]="Release.MAINIMAGE" type="text">
+        </div>
+        
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+        <img src="{{ Release.MAINIMAGE }}" class="img-fluid" alt="">
+    </div>
+    <div class="col-12">
+      <div class="form-group">
+          <label for="comment"> Titulo</label>
+          <div class="title">
+            <jodit-editor [(ngModel)]="Release.TITLERELEASE" 
+            [config]="{buttons: 
+              'source,
+              Group separator,
+              bold,
+              strikethrough,
+              underline,
+              italic,
+              font,
+              fontsize,
+              ul,
+              ol,
+              outdent,	
+              indent
+              Group separator,
+              image,
+              video,
+              link,
+              table,
+              Group separator,
+              undo,redo,align,
+              fullsize,selectall,print
+              '}"></jodit-editor>  
+          </div>
+          <input class="form-control" [(ngModel)]="Release.SINGLEIMG"  type="text" placeholder="http:// URL Imagen">
+          <div id="preView" class="preView">
+            <div class="titleCard">
+              <img src="{{ Release.SINGLEIMG }}" class="img-fluid" alt="">
+              <div class="titleStatement-1 d-none d-sm-block">
+                  <h2 class="text-justify">{{Release.TITLERELEASE}}</h2>
+              </div>
+            </div>
+            <div class="titleStatement-2 d-block d-sm-none">
+                <h2 class="text-justify">{{Release.TITLERELEASE}}</h2>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-group">
+        <label for="comment"  > Sumario </label>
+        <jodit-editor [(ngModel)]="Release.FIRSTSTATEMENTRELEASE" 
+        [config]="{buttons: 
+          'source,
+          Group separator,
+          bold,
+          strikethrough,
+          underline,
+          italic,
+          font,
+          fontsize,
+          ul,
+          ol,
+          outdent,	
+          indent
+          Group separator,
+          image,
+          video,
+          link,
+          table,
+          Group separator,
+          undo,redo,align,
+          fullsize,selectall,print
+          '}"></jodit-editor>   
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-group">
+        <label for="comment"> Cuerpo </label> <br>
+        <div class="corp">
+          <jodit-editor [(ngModel)]="Release.CONTENTRELEASE" 
+          [config]="{buttons: 
+            'source,
+            Group separator,
+            bold,
+            strikethrough,
+            underline,
+            italic,
+            font,
+            fontsize,
+            ul,
+            ol,
+            outdent,	
+            indent
+            Group separator,
+            image,
+            video,
+            link,
+            table,
+            Group separator,
+            undo,redo,align,
+            fullsize,selectall,print
+            '}">
+          </jodit-editor>   
+        </div>
+      </div>
+      
+    </div>
+    <div class="col-12">
+      <button type="button" (click)="addRelease()" class="btn btn-light btn-lg btn-block"> SUBIR </button>
+    </div>
+  </div>

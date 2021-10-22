@@ -1,0 +1,22 @@
+.inf{
+    cursor: pointer;
+}
+
+.preImg{
+    text-align: center;
+}
+
+.corp{
+    width: 100%;
+    min-height: 500px;
+}
+
+h1,h2,h3,h4{
+    color: #fff;
+}
+
+.option{
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}

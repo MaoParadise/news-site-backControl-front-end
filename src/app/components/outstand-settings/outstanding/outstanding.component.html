@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <h1> Historial </h1>
+    <div class="col-12">
+      <div class="d-flex justify-content-end">
+        <input (keyup)="onChangeSearch()" [(ngModel)]="searchQuery" class="form-control" type="text" name="search"
+          placeholder="Buscar por título, código o usuario (correo, nombre o apellido)">
+        <button (click)="RefreshReleasesApproved()" class="btn btn-info"> <i class="fas fa-sync-alt"></i> </button>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col"> Codigo </th>
+            <th scope="col"> Titulo </th>
+            <th scope="col"> Autor </th>
+            <th scope="col"> Ult. Modificación </th>
+            <th scope="col"> Estado </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Releases of data | paginate: { itemsPerPage: 6, currentPage: actualPage }; let i=index"
+            class="inf">
+            <th *ngIf="Releases.IDRELEASESTATE == 10" class="table-warning text-dark" scope="row">
+              {{ Releases.IDRELEASE }}</th>
+            <th *ngIf="Releases.IDRELEASESTATE == 11" class="table-success text-dark" scope="row">
+              {{ Releases.IDRELEASE }}</th>
+            <th *ngIf="Releases.IDRELEASESTATE == 12" class="table-danger text-dark" scope="row">
+              {{ Releases.IDRELEASE }}</th>
+            <td>{{ Releases.SINGLETITLE }}</td>
+            <td>{{ Releases.NAMEHELPER }} {{ Releases.LASTNAMEHELPER }}</td>
+            <td>{{ Releases.MODIFIEDDATERELEASE }}</td>
+            <td>
+              <button title="Destacar" class="btn btn-success option" (click)="addOutstanding(Releases, 1)"> <i
+                  class="fas fa-check"></i> </button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row">
+        <div class="col-12">
+          <pagination-controls [previousLabel]="labels.previousLabel" [nextLabel]="labels.nextLabel"
+            (pageChange)="actualPage = $event">
+          </pagination-controls>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 recent-news">
+      <br>
+      <h4> NOTICIAS Destacadas </h4>
+      <div *ngFor="let OutRelease of dataOutStanding"  class="row justify-content-end row-recent-news">
+        <div class="col-7 recent-text text-center align-self-center">
+          {{OutRelease.SINGLETITLE}}
+        </div>
+        <div class="col-5 recent-rounded"><img src="{{OutRelease.MAINIMAGE}}"
+            class="img-thumbnail out-img recent-rounded rounded-circle img-fluid"></div>
+        <button title="Borrar Destacado" class="btn btn-danger option" (click)="deleteOutStanding(OutRelease, 1)"> <i
+            class="fas fa-times"></i> </button>
+      </div>
+    </div>
+  </div>
+</div>

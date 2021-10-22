@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row text-center justify-content-md-center">
+    <div class="col-md-8">
+      <form class="form-box">
+        <h1> REGISTRO </h1>
+        <input type="text" [(ngModel)]="helper.USERNAMEHELPER" name="username" placeholder="Usuario">
+        <small class="form-text text-muted"></small>
+        <input type="text" [(ngModel)]="helper.NAMEHELPER" name="name" placeholder="Nombre">
+        <small class="form-text text-muted"></small>
+        <input type="text" [(ngModel)]="helper.LASTNAMEHELPER" name="lastname" placeholder="Apellido">
+        <small class="form-text text-muted"></small>
+        <input type="email" [(ngModel)]="helper.EMAILHELPER" name="email" placeholder="Email">
+        <small class="form-text text-muted"></small>
+        <input type="password" [(ngModel)]="helper.PASSWORDHELPER" name="password" placeholder="Contraseña">
+        <small class="form-text text-muted"></small>
+        <input type="password" [(ngModel)]="rePassword" name="rePassword" placeholder="Repita contraseña">
+        <small class="form-text text-muted"></small>
+        <button (click)="registerLocalHelper()" class="btn-submit">
+            REGISTRAR
+        </button>
+        <p><a routerLink="/login"> ¿Ya tiene una cuenta? </a> </p>
+      </form>
+    </div>
+  </div>
+</div>

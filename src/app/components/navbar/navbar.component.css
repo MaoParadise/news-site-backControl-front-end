@@ -1,0 +1,103 @@
+
+
+.presentation-head{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #000428;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation: round 0.8s linear infinite;
+}
+
+.navbar{
+        padding: 0rem 1rem;
+        padding-bottom: 5px;
+}
+
+.bg-dark{
+        background: #000000;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+
+.nav-item{
+   padding-left: 35px !important;
+   padding-right: 35px !important; 
+   cursor: pointer;
+   background: #004e92;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #004e92, #004e92);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #004e92, #004e92);
+   border-right: solid 2px #fff; 
+        
+}
+
+.nav-item:hover{
+        background: rgb(0, 78, 146,0.2);
+        
+        color: #000000;
+}
+
+.navbar-nav > li {
+    margin: 0;
+}
+
+
+.nav-link{
+   color: rgba(255, 255, 255,0.9) !important;
+}
+
+.logo{
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+.fab,
+.fas{
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.fa-facebook-square{
+        margin-left: 25px;
+}
+
+
+.search-box{
+        padding: 0;
+}
+
+.btn >.fa-search{
+        margin: 0;
+}
+
+.btn-primary {
+color: #fff;
+background: #004e92;  /* fallback for old browsers */
+border-color: #1a1a1a;
+}
+      
+.btn-primary:hover {
+color: #fff;
+background: rgb(0, 78, 146,0.5);  /* fallback for old browsers */
+border-color: #010000;
+}
+
+.dropLeft{
+ width: 100%;
+}
+
+.dropdown-menu{
+        background: #004e92;
+}
+
+.dropdown-item{
+        color: #fff;
+}
+
+.dropdown-item:hover{
+        color: #000;
+}

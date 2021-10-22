@@ -1,0 +1,71 @@
+.inf{
+    cursor: pointer;
+}
+
+.preImg{
+    text-align: center;
+}
+
+.corp{
+    width: 100%;
+    min-height: 500px;
+}
+
+h1,h2,h3,h4{
+    color: #fff !important;
+}
+
+.option{
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+.recent-news,
+.recent-news> h1,
+.recent-news> h2,
+.recent-news> h3,
+.recent-news> h4{
+    color: #fff;
+    text-align: right;
+    float: right;
+    overflow: auto;
+    width: 100%;
+}
+
+
+.recent-text{
+    font: lighter 1.1rem 'Roboto Condensed';
+    height: 80px;
+    overflow: auto;
+}
+
+.recent-text::-webkit-scrollbar{
+    display: none;
+}
+
+
+.recent-news>h4{
+    font: normal 1.25rem 'Roboto Condensed';
+    color: #fff;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+
+
+.row-recent-news{
+    background: rgba(0, 4, 40,0.9); 
+    background: -webkit-linear-gradient(to right, rgba(0, 78, 146,0.9), rgba(0, 4, 40,0.9));
+    background: linear-gradient(to right, rgba(0, 78, 146,0.9), rgba(0, 4, 40,0.9));
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 8px;
+}
+
+
+.out-img{
+    width: 150px;
+    height: 150px;
+}

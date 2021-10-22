@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" routerLink="/"> SMARTIMES</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="float-right nav-link dropdown-toggle" href="#" id="DropdownNews" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-file"></i>Articulos y Noticias
+        </a>
+        <div class="text-left dropLeft dropdown-menu dropdown-menu-left" aria-labelledby="DropdownNews">
+          <div></div>
+          <a class="dropdown-item" href="/newSettings/add"><i
+                class="fas fa-plus-circle"></i>Agregar</a>
+          <a class="dropdown-item" href="/newSettings/edit"><i
+              class="fas fa-edit"></i>Editar</a>
+          <a class="dropdown-item" href="/newSettings/down"><i
+              class="fas fa-minus-circle"></i>Dar de Baja</a>
+          <div *ngIf="helperTp == 1" class="dropdown-divider"></div>
+          <a *ngIf="helperTp == 1" class="dropdown-item" routerLink="approvedSettings"><i class="fas fa-clipboard-check"></i>Aprobar o
+            Rechazar</a>
+            <a *ngIf="helperTp == 1" class="dropdown-item" routerLink="outSettings"><i class="fas fa-clipboard-check"></i> Destacar Publicacion </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="float-right nav-link dropdown-toggle" href="#" id="DropdownGallery" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-image"></i>Galerias
+        </a>
+      </li>
+    </ul>
+
+
+    <ul class="navbar-nav mr-0">
+      <li *ngIf="auto == true" class="nav-item dropdown">
+        <a class="float-right nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ nameUser }}
+          <img class="rounded-circle " src="/assets/default/logo.png" width="30" height="30">
+        </a>
+        <div class="text-right dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" (click)="showProfile()">Perfil</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="logout()">Logout</a>
+        </div>
+      </li>
+      <li *ngIf="auto == false" class="nav-item dropdown">
+        <a class="float-right nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          PORTAL
+          <img class="rounded-circle " src="/assets/default/logo.png" width="30" height="30">
+        </a>
+        <div class=" text-right dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="login">Login</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="register">registro</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="/">¿haz olvidado tu contraseña?</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
